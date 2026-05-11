@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Best SUVs Under R300k in South Africa (May 2026) — GemFind SA</title>
+<meta name="description" content="Need a proper SUV but don't have half a million burning a hole in your pocket? The under-R300k segment is where smart buyers hunt. You won't get the latest">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --black: #0e0e0e; --white: #f5f2eb; --cream: #ede9df;
+    --accent: #c8392b; --accent-dark: #9b2a1f;
+    --muted: #6b6457; --border: #d4cfc5; --card-bg: #ffffff;
+  }
+  body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--black); font-size: 17px; line-height: 1.75; }
+  nav { background: var(--black); display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 60px; border-bottom: 3px solid var(--accent); position: sticky; top: 0; z-index: 100; }
+  .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: var(--white); letter-spacing: 2px; text-decoration: none; }
+  .nav-logo span { color: var(--accent); }
+  .nav-back { font-size: 0.82rem; color: #888; text-decoration: none; transition: color 0.2s; }
+  .nav-back:hover { color: var(--white); }
+  .article-hero { background: var(--black); color: var(--white); padding: 4rem 2rem 3rem; }
+  .article-hero-inner { max-width: 780px; margin: 0 auto; }
+  .article-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+  .tag { font-size: 0.7rem; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; background: var(--accent); color: white; padding: 4px 12px; border-radius: 3px; }
+  .article-date, .article-read-time { font-size: 0.82rem; color: #666; }
+  .article-hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.2rem, 5vw, 3.5rem); line-height: 1.05; letter-spacing: 1.5px; margin-bottom: 1.25rem; color: var(--white); }
+  .article-intro { font-size: 1.05rem; color: #aaa; font-weight: 300; line-height: 1.7; max-width: 640px; border-left: 3px solid var(--accent); padding-left: 1.25rem; margin-top: 1.5rem; }
+  .article-body { max-width: 780px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+  .summary-box { background: var(--cream); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 1.5rem; margin-bottom: 3rem; }
+  .summary-box h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 1px; margin-bottom: 1rem; color: var(--accent); }
+  .summary-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .summary-list li { font-size: 0.9rem; display: flex; align-items: baseline; gap: 0.75rem; }
+  .summary-list li::before { content: "→"; color: var(--accent); font-weight: 500; flex-shrink: 0; }
+  .summary-list .pos { color: var(--muted); font-size: 0.75rem; font-weight: 500; }
+  .article-body p { margin-bottom: 1.4rem; color: #2a2a2a; font-weight: 300; }
+  .article-body h2 { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 1px; margin: 3rem 0 0.5rem; line-height: 1.1; }
+  .car-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 1.75rem; margin: 2rem 0; position: relative; overflow: hidden; }
+  .car-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--accent); }
+  .car-card.gem::before { background: #1a6b3c; }
+  .car-num { position: absolute; top: 1.25rem; right: 1.5rem; font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; color: #f0ece4; line-height: 1; }
+  .car-badge { display: inline-block; font-size: 0.68rem; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; background: var(--accent); color: white; padding: 3px 10px; border-radius: 3px; margin-bottom: 0.75rem; }
+  .car-badge.gem { background: #1a6b3c; }
+  .car-badge.solid { background: #1a4a8a; }
+  .car-title { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 1.5px; line-height: 1; margin-bottom: 0.25rem; }
+  .car-subtitle { font-size: 0.82rem; color: var(--muted); margin-bottom: 1.25rem; }
+  .car-specs-row { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1.25rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border); }
+  .spec { display: flex; flex-direction: column; gap: 2px; }
+  .spec-label { font-size: 0.65rem; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); }
+  .spec-val { font-size: 0.95rem; font-weight: 500; color: var(--black); }
+  .car-desc { font-size: 0.92rem; color: #3a3a3a; font-weight: 300; line-height: 1.7; margin-bottom: 1rem; }
+  .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
+  .pros, .cons { background: var(--cream); border-radius: 6px; padding: 1rem 1.1rem; }
+  .pros-title, .cons-title { font-size: 0.7rem; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.6rem; }
+  .pros-title { color: #1a6b3c; }
+  .cons-title { color: var(--accent); }
+  .pros ul, .cons ul { list-style: none; display: flex; flex-direction: column; gap: 0.35rem; }
+  .pros li, .cons li { font-size: 0.82rem; color: var(--muted); display: flex; align-items: baseline; gap: 0.5rem; }
+  .pros li::before { content: "✓"; color: #1a6b3c; font-weight: 600; flex-shrink: 0; }
+  .cons li::before { content: "✗"; color: var(--accent); font-weight: 600; flex-shrink: 0; }
+  .car-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--border); flex-wrap: wrap; gap: 0.75rem; }
+  .car-price { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 1px; }
+  .price-note { font-size: 0.75rem; color: var(--muted); display: block; font-weight: 300; }
+  .verdict-badge { font-size: 0.78rem; font-weight: 500; padding: 6px 14px; border-radius: 4px; background: #edf7f1; color: #1a6b3c; }
+  .verdict-badge.ok { background: #fef6e4; color: #7d5a0b; }
+  .callout { background: var(--black); color: var(--white); border-radius: 8px; padding: 1.75rem; margin: 2.5rem 0; display: grid; grid-template-columns: 1fr auto; gap: 1.5rem; align-items: center; }
+  .callout h4 { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 1px; margin-bottom: 0.4rem; }
+  .callout p { font-size: 0.85rem; color: #888; margin: 0; font-weight: 300; }
+  .callout-btn { background: var(--accent); color: white; padding: 10px 22px; border-radius: 4px; text-decoration: none; font-weight: 500; font-size: 0.9rem; white-space: nowrap; }
+  .tips-box { border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin: 2.5rem 0; }
+  .tips-box h4 { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; letter-spacing: 1px; margin-bottom: 1rem; }
+  .tip-list { display: flex; flex-direction: column; gap: 0.75rem; list-style: none; }
+  .tip-list li { font-size: 0.9rem; font-weight: 300; color: #3a3a3a; display: flex; align-items: baseline; gap: 0.75rem; line-height: 1.5; }
+  .tip-num { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; color: var(--accent); flex-shrink: 0; min-width: 20px; }
+  hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+  footer { background: var(--black); color: #555; padding: 2rem; text-align: center; font-size: 0.8rem; }
+  footer a { color: var(--accent); text-decoration: none; }
+  @media (max-width: 640px) {
+    .pros-cons { grid-template-columns: 1fr; }
+    .callout { grid-template-columns: 1fr; }
+    .article-body { padding: 2rem 1.25rem 4rem; }
+    .article-hero { padding: 2.5rem 1.25rem 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">GEM<span>FIND</span> SA</a>
+  <a href="index.html" class="nav-back">&larr; Back to Home</a>
+</nav>
+
+<div class="article-hero">
+  <div class="article-hero-inner">
+    <div class="article-meta">
+      <span class="tag">Buyer's Guide</span>
+      <span class="article-date">May 2026</span>
+      <span class="article-read-time">· 8 min read</span>
+    </div>
+    <h1>Best SUVs Under R300k in South Africa (May 2026)</h1>
+    <p class="article-intro">Need a proper SUV but don't have half a million burning a hole in your pocket? The under-R300k segment is where smart buyers hunt. You won't get the latest tech or a factory warranty, but you will find solid, proven workhorses that'll handle SA roads, school runs, and weekend getaways without breaking the bank.</p>
+  </div>
+</div>
+
+<div class="article-body">
+
+  <div class="summary-box"><h3>Quick Summary</h3><ul class="summary-list">
+        <li>
+          <span class="pos">#1</span>
+          Toyota Fortuner 2.5 D-4D — <span style="color:var(--muted);font-weight:300">Bullet-proof reliability and parts everywhere</span>
+        </li>
+        <li>
+          <span class="pos">#2</span>
+          Ford Everest 2.2 TDCi — <span style="color:var(--muted);font-weight:300">Underrated value with solid build quality</span>
+        </li>
+        <li>
+          <span class="pos">#3</span>
+          Nissan X-Trail 2.0 dCi — <span style="color:var(--muted);font-weight:300">Comfortable family hauler with low running costs</span>
+        </li>
+        <li>
+          <span class="pos">#4</span>
+          Hyundai Santa Fe 2.2 CRDi — <span style="color:var(--muted);font-weight:300">Feature-packed bargain with space for days</span>
+        </li>
+        <li>
+          <span class="pos">#5</span>
+          Mitsubishi Pajero Sport 2.5 DI-D — <span style="color:var(--muted);font-weight:300">Proper 4x4 capability at entry-level pricing</span>
+        </li></ul></div>
+
+  <p>Let's be straight: R300k doesn't buy you a brand-new SUV anymore. What it does buy you is access to a surprisingly decent selection of mid-2010s SUVs that have already taken their biggest depreciation hit. We're talking 2012–2017 models with between 100,000 and 180,000km on the clock — the sweet spot where you're buying proven reliability, not someone else's problem.</p>
+<p>The key to shopping in this bracket is knowing what to avoid. Stay away from high-spec luxury brands with expensive parts (think BMW X5 or Range Rover Sport — they're cheap for a reason). Instead, focus on mainstream brands with strong SA dealer networks and readily available parts. Check e-NaTIS before viewing any vehicle, and don't skip a pre-purchase inspection at a trusted mechanic.</p>
+<p>We've scoured AutoTrader SA and Cars.co.za to find five SUVs that represent real value in May 2026. These aren't just cheap — they're smart buys that'll serve you well if you choose right and maintain them properly.</p>
+
+          
+          <div class="car-card gem">
+            <span class="car-num">01</span>
+            <span class="car-badge gem">Top Pick</span>
+            <h2 class="car-title">Toyota Fortuner 2.5 D-4D</h2>
+            <p class="car-subtitle">2012–2015 · 7-Seater SUV · Manual/Auto</p>
+            <div class="car-specs-row">
+              <div class="spec">
+                <span class="spec-label">Price Range</span>
+                <span class="spec-val">R240,000 – R295,000</span>
+              </div>
+              <div class="spec">
+                <span class="spec-label">Avg. Mileage</span>
+                <span class="spec-val">140,000 – 180,000 km</span>
+              </div>
+              <div class="spec">
+                <span class="spec-label">Fuel Use</span>
+                <span class="spec-val">±8.5L/100km</span>
+              </div>
+              <div class="spec">
+                <span class="spec-label">Parts Cost</span>
+                <span class="spec-val">Moderate</span>
+              </div></div>
+            <p class="car-desc">The Fortuner is the obvious choice here, and for good reason. This is the SUV South Africa knows and trusts. Built on the Hilux platform, it shares that legendary 2.5-litre turbodiesel engine that can run to 400,000km with proper maintenance. You'll find Fortuners everywhere on the used market, which means competitive pricing and plenty of choice.</p><p class="car-desc">The 2012–2015 models fall right into our budget, and they're from the era before Toyota prices went completely mad. These are proper body-on-frame SUVs with actual off-road capability, not soft-roader pretenders. The ride is firm, the cabin materials are basic Toyota plastic, and the infotainment system is dated — but none of that matters when you're still driving it 10 years from now.</p><p class="car-desc">Parts are readily available at every town's Toyota dealer, and independent mechanics know these engines inside-out. The manual gearbox is more reliable than the auto, but both are decent. Watch for service history — a Fortuner without stamped service books at this mileage is a hard pass.</p>
+            <div class="pros-cons">
+              <div class="pros">
+                <p class="pros-title">Why to buy</p>
+                <ul><li>Legendary reliability and durability</li><li>Parts and service available everywhere in SA</li><li>Strong resale value holds even at high mileage</li><li>Proven off-road capability and towing capacity</li></ul>
+              </div>
+              <div class="cons">
+                <p class="cons-title">Watch out for</p>
+                <ul><li>Basic interior quality and dated tech</li><li>Firm ride quality on tar roads</li><li>Higher mileage examples at this price point</li></ul>
+              </div>
+            </div>
+            <div class="car-footer">
+              <div>
+                <span class="car-price">R240,000 – R295,000</span>
+                <span class="price-note">Manual transmission models slightly cheaper</span>
+              </div>
+              <span class="verdict-badge ">✓ Strong Buy</span>
+            </div>
+          </div>
+          
+          <div class="callout">
+            <div>
+              <h4>Get Weekly Gem Finds In Your Inbox</h4>
+              <p>We send the best underpriced listings in SA every Monday. Free, no spam, unsubscribe any time.</p>
+            </div>
+            <a href="index.html#newsletter" class="callout-btn">Subscribe Free &rarr;</a>
+          </div>
+          <div class="car-card gem">
+            <span class="car-num">02</span>
+            <span class="car-badge gem">Best Value</span>
+            <h2 class="car-title">Ford Everest 2.2 TDCi XLS</h2>
+            <p class="car-subtitle">2016–2018 · 7-Seater SUV · Manual/Auto</p>
+            <div class="car-specs-row">
+              <div class="spec">
+                <span class="spec-label">Price Range</span>
+                <span class="spec-val">R255,000 – R295,000</span>
+              </div>
+              <div class="spec">
+                <span class="spec-label">Avg. Mileage</span>
+                <span class="spec-val">120,000 – 160,000 km</span>
+              </div>
+              <div class="spec">
+                <span class="spec-label">Fuel Use</span>
+                <span class="spec-val">±8.2L/100km</span>
+              </div>
+              <div class="spec">
+                <span class="spec-label">Parts Cost</span>
+                <span class="spec-val">Moderate</span>
+              </div></div>
+            <p class="car-desc">The Everest is the Fortuner's main rival, and it's genuinely underrated in the used market. You're getting a newer vehicle with lower mileage than equivalent Fortuners at the same price. The 2.2-litre Duratorq engine is solid — not as legendary as Toyota's diesel, but reliable if serviced properly. The XLS spec gives you a decent level of kit including leather, touchscreen, and climate control.</p><p class="car-desc">Ford's dealer network in SA is strong, and parts pricing is competitive. The Everest drives more like a modern SUV than the Fortuner — slightly softer ride, better on-road manners, quieter cabin. It's still body-on-frame and can handle dirt roads and light off-roading without complaint.</p><p class="car-desc">The catch? Ford's resale isn't quite as strong as Toyota's, which is why you're getting better value. If you're planning to keep it long-term and maintain it well, this price difference is pure win for you.</p>
+            <div class="pros-cons">
+              <div class="pros">
+                <p class="pros-title">Why to buy</p>
+                <ul><li>Newer models with lower mileage at similar pricing</li><li>Better on-road comfort and refinement than Fortuner</li><li>Good spec levels even on XLS trim</li><li>Strong Ford dealer network across SA</li></ul>
+              </div>
+              <div class="cons">
+                <p class="cons-title">Watch out for</p>
+                <ul><li>Resale value not as strong as Toyota</li><li>Some electrical gremlins reported on earlier models</li><li>DPF issues if used mainly for short trips</li></ul>
+              </div>
+            </div>
+            <div class="car-footer">
+              <div>
+                <span class="car-price">R255,000 – R295,000</span>
+                <span class="price-note">Look for 2017+ models for improved reliability</span>
+              </div>
+              <span class="verdict-badge ">✓ Strong Buy</span>
+            </div>
+          </div>
+          
+          <div class="car-card ">
+            <span class="car-num">03</span>
+            <span class="car-badge solid">Family Choice</span>
+            <h2 class="car-title">Nissan X-Trail 2.0 dCi</h2>
+            <p class="car-subtitle">2015–2017 · 5/7-Seater SUV · Manual/CVT</p>
+            <div class="car-specs-row">
+              <div class="spec">
+                <span class="spec-label">Price Range</span>
+                <span class="spec-val">R210,000 – R270,000</span>
+              </div>
+              <div class="spec">
+                <span class="spec-label">Avg. Mileage</span>
+                <span class="spec-val">110,000 – 150,000 km</span>
+              </div>
+              <div class="spec">
+                <span class="spec-label">Fuel Use</span>
+                <span class="spec-val">±7.8L/100km</span>
+              </div>
+              <div class="spec">
+                <span class="spec-label">Parts Cost</span>
+                <span class="spec-val">Moderate</span>
+              </div></div>
+            <p class="car-desc">If your SUV needs are more suburban than safari, the X-Trail makes serious sense. It's a monocoque crossover rather than a body-on-frame truck, which means it drives like a tall station wagon — comfortable, easy to pilot, and surprisingly economical. The 2.0 dCi engine is frugal and smooth, and the CVT gearbox (or 6-speed manual) is well-matched.</p><p class="car-desc">You're getting a proper family vehicle here with a comfortable cabin, decent boot space, and optional third-row seating that's actually usable for kids. Build quality is solid, and Nissan's SA parts network is reliable. These X-Trails are popular with estate agents and school-run parents for good reason — they just work.</p><p class="car-desc">Don't expect to go serious off-roading. The X-Trail's AWD system is for gravel roads and wet tar, not rock-crawling. Ground clearance is also lower than proper body-on-frame SUVs. But for 95% of SA buyers who never leave tarred roads, that's completely irrelevant.</p>
+            <div class="pros-cons">
+              <div class="pros">
+                <p class="pros-title">Why to buy</p>
+                <ul><li>Excellent fuel economy for the segment</li><li>Very comfortable for daily driving and long trips</li><li>Lower entry price than Fortuner/Everest</li><li>Practical interior with good storage</li></ul>
+              </div>
+              <div class="cons">
+                <p class="cons-title">Watch out for</p>
+                <ul><li>Limited off-road capability compared to body-on-frame rivals</li><li>CVT gearbox can be problematic if not serviced</li><li>Lower ground clearance</li></ul>
+              </div>
+            </div>
+            <div class="car-footer">
+              <div>
+                <span class="car-price">R210,000 – R270,000</span>
+                <span class="price-note">Manual gearbox models are more reliable long-term</span>
+              </div>
+              <span class="verdict-badge ">✓ Strong Buy</span>
+            </div>
+          </div>
+          
+          <div class="car-card ">
+            <span class="car-num">04</span>
+            <span class="car-badge solid">Bargain Hunter</span>
+            <h2 class="car-title">Hyundai Santa Fe 2.2 CRDi</h2>
+            <p class="car-subtitle">2013–2016 · 7-Seater SUV · Auto</p>
+            <div class="car-specs-row">
+              <div class="spec">
+                <span class="spec-label">Price Range</span>
+                <span class="spec-val">R195,000 – R260,000</span>
+              </div>
+              <div class="spec">
+                <span class="spec-label">Avg. Mileage</span>
+                <span class="spec-val">130,000 – 170,000 km</span>
+              </div>
+              <div class="spec">
+                <span class="spec-label">Fuel Use</span>
+                <span class="spec-val">±8.8L/100km</span>
+              </div>
+              <div class="spec">
+                <span class="spec-label">Parts Cost</span>
+                <span class="spec-val">Moderate</span>
+              </div></div>
+            <p class="car-desc">The Santa Fe is where you go when you want maximum metal for minimum money. These depreciate faster than Toyota or Ford, which means you're getting a big, well-equipped SUV at bargain pricing. The 2.2 CRDi engine is punchy and refined, and even base-spec Santa Fes come loaded with features that would be optional extras on rivals.</p><p class="car-desc">Build quality is solid — Hyundai sorted out their quality issues years ago. The cabin feels more premium than you'd expect at this price, with soft-touch materials and a logical layout. Seven seats come standard, and there's loads of space for families. Parts are readily available through Hyundai dealers and aftermarket suppliers.</p><p class="car-desc">The flip side? Resale value continues to drop faster than mainstream brands, and brand snobbery is real in SA — your neighbours will be more impressed by a Fortuner badge. But if you're buying with your head rather than your ego, the Santa Fe delivers serious value.</p>
+            <div class="pros-cons">
+              <div class="pros">
+                <p class="pros-title">Why to buy</p>
+                <ul><li>Lowest entry price for a 7-seater SUV in decent condition</li><li>Generous standard equipment levels</li><li>Comfortable and spacious interior</li><li>Good warranty coverage when new filters down to fewer issues used</li></ul>
+              </div>
+              <div class="cons">
+                <p class="cons-title">Watch out for</p>
+                <ul><li>Weaker resale value than Japanese rivals</li><li>Some reported issues with dual-clutch transmission on earlier autos</li><li>Brand perception still lags Toyota/Ford</li></ul>
+              </div>
+            </div>
+            <div class="car-footer">
+              <div>
+                <span class="car-price">R195,000 – R260,000</span>
+                <span class="price-note">2015+ models have better transmission reliability</span>
+              </div>
+              <span class="verdict-badge ok">⚡ Buy with Caution</span>
+            </div>
+          </div>
+          
+          <div class="car-card ">
+            <span class="car-num">05</span>
+            <span class="car-badge solid">Off-Road Ready</span>
+            <h2 class="car-title">Mitsubishi Pajero Sport 2.5 DI-D</h2>
+            <p class="car-subtitle">2012–2015 · 7-Seater SUV · Manual/Auto</p>
+            <div class="car-specs-row">
+              <div class="spec">
+                <span class="spec-label">Price Range</span>
+                <span class="spec-val">R215,000 – R280,000</span>
+              </div>
+              <div class="spec">
+                <span class="spec-label">Avg. Mileage</span>
+                <span class="spec-val">140,000 – 190,000 km</span>
+              </div>
+              <div class="spec">
+                <span class="spec-label">Fuel Use</span>
+                <span class="spec-val">±9.2L/100km</span>
+              </div>
+              <div class="spec">
+                <span class="spec-label">Parts Cost</span>
+                <span class="spec-val">Moderate to Expensive</span>
+              </div></div>
+            <p class="car-desc">If you actually need proper 4x4 capability and can't stretch to a Fortuner, the Pajero Sport deserves a look. This is a serious off-roader with low-range gearing, diff locks, and proven credentials on SA's toughest trails. Built on the Triton bakkie platform, it shares that tough mechanicals and can take serious abuse.</p><p class="car-desc">The 2.5 DI-D engine is somewhat agricultural but reliable. It's not quick, but it's torquey where it counts. The interior is basic even by Mitsubishi standards — lots of hard plastics and a dated design. But it's built to be hosed out after a Lesotho trip, not to impress at the Sandton City parking lot.</p><p class="car-desc">The main consideration is parts availability. Mitsubishi's SA dealer network is thinner than Toyota or Ford, and some parts can take time to source. Service intervals are also shorter than rivals. This is a vehicle for buyers who prioritize capability over creature comforts and who live near a decent Mitsubishi dealer.</p>
+            <div class="pros-cons">
+              <div class="pros">
+                <p class="pros-title">Why to buy</p>
+                <ul><li>Excellent off-road capability with proper 4x4 system</li><li>Tough and durable mechanicals</li><li>Lower pricing than equivalent Fortuner</li><li>Strong towing capacity</li></ul>
+              </div>
+              <div class="cons">
+                <p class="cons-title">Watch out for</p>
+                <ul><li>Thinner dealer network than mainstream brands</li><li>Basic interior and older design</li><li>Higher fuel consumption than rivals</li><li>Some parts can be expensive or slow to source</li></ul>
+              </div>
+            </div>
+            <div class="car-footer">
+              <div>
+                <span class="car-price">R215,000 – R280,000</span>
+                <span class="price-note">Manual models more reliable than the 5-speed auto</span>
+              </div>
+              <span class="verdict-badge ok">⚡ Buy with Caution</span>
+            </div>
+          </div>
+          <div class="tips-box">
+            <h4>Smart Buying Tips for Used SUVs</h4>
+            <ul class="tip-list"><li><span class="tip-num">01</span>Always check e-NaTIS for accident history and verify the VIN matches all paperwork before viewing</li>
+<li><span class="tip-num">02</span>Budget R15,000–R20,000 for immediate maintenance on any vehicle at this age and mileage (tyres, brakes, services)</li>
+<li><span class="tip-num">03</span>Diesel engines need regular highway driving — avoid SUVs used only for short city trips as they'll have DPF and carbon buildup issues</li>
+<li><span class="tip-num">04</span>Get a pre-purchase inspection from an independent mechanic who specializes in that brand — it's R1,500 well spent</li>
+<li><span class="tip-num">05</span>Check service history carefully — a missing service book is a massive red flag at 100,000km+</li>
+<li><span class="tip-num">06</span>Test drive on various road surfaces including gravel if possible to check for suspension wear and drivetrain issues</li>
+</ul>
+          </div><hr>
+<h2>What About Financing?</h2>
+<p>Most banks will finance vehicles up to 12 years old or 200,000km, but expect higher interest rates than new car finance. Your rate will depend on the vehicle's age, mileage, and your credit profile — typically ranging from 12% to 18% in the current market. Consider paying cash if possible to avoid interest, or at least put down a substantial deposit.</p>
+<p>Insurance on older, high-mileage vehicles is often cheaper than you'd expect, but make sure you're getting retail value cover, not trade value. The difference can be significant. Get quotes from multiple insurers before buying — some are much friendlier to older vehicles than others.</p>
+<hr>
+<h2>Running Costs Reality Check</h2>
+<p>Beyond the purchase price, budget properly for ownership. A 10-year-old diesel SUV with 150,000km will need tyres, brakes, and general maintenance within the first year. Parts for mainstream brands like Toyota and Ford are reasonable, but labour rates at dealers are expensive — find a good independent specialist.</p>
+<p>Fuel costs matter too. At current petrol prices (around R24/litre in May 2026), the difference between the X-Trail's 7.8L/100km and the Pajero Sport's 9.2L/100km is about R340 per 1,000km driven. Over a year of typical driving (20,000km), that's nearly R7,000 in your pocket. Don't ignore economy when comparing vehicles.</p>
+
+
+  <hr>
+  <p>The under-R300k SUV market in South Africa offers genuine value if you shop smart and set realistic expectations. You're not buying perfection — you're buying proven workhorses that have already survived their early years and taken their biggest depreciation hit.</p>
+<p>Our top pick remains the Toyota Fortuner for its unbeatable reliability and resale value, but the Ford Everest offers better value for buyers who plan to keep their vehicle long-term. The Nissan X-Trail is the smart choice for families who prioritize comfort over off-road ability, while the Hyundai Santa Fe delivers maximum features for minimum cash. The Pajero Sport is for the niche buyer who actually needs serious 4x4 capability on a budget.</p>
+<p>Whatever you choose, do your homework. Check vehicle history, get inspections, verify service records, and negotiate firmly. The best deals aren't advertised — they come from patient buyers who know what they're looking at and walk away from anything dodgy. Take your time, trust your gut, and remember: the cheapest SUV is rarely the best value. Buy the best-maintained example you can afford, not the cheapest one you can find.</p>
+
+
+  <div class="callout" style="margin-top: 3rem;">
+    <div>
+      <h4>We Find Deals Like These Every Week</h4>
+      <p>Subscribe free and get the best underpriced used car listings in SA straight to your inbox every Monday.</p>
+    </div>
+    <a href="index.html#newsletter" class="callout-btn">Get Free Alerts &rarr;</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>&copy; 2026 GemFind SA &middot; <a href="index.html">Home</a> &middot; <a href="#">Contact</a></p>
+  <p style="margin-top: 0.5rem; font-size: 0.7rem;">Prices are approximate based on current listings and subject to change. Always do your own research and get a professional inspection before buying any used vehicle.</p>
+</footer>
+
+</body>
+</html>
