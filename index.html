@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GemFind SA — Best Used Car Deals in South Africa</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0e0e0e;
+    --white: #f5f2eb;
+    --cream: #ede9df;
+    --accent: #c8392b;
+    --accent-dark: #9b2a1f;
+    --muted: #6b6457;
+    --border: #d4cfc5;
+    --card-bg: #ffffff;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--black);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--black);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2rem;
+    height: 60px;
+    border-bottom: 3px solid var(--accent);
+  }
+
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    color: var(--white);
+    letter-spacing: 2px;
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--accent); }
+
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+
+  .nav-cta {
+    background: var(--accent);
+    color: var(--white) !important;
+    padding: 6px 16px;
+    border-radius: 4px;
+    font-weight: 500 !important;
+  }
+  .nav-cta:hover { background: var(--accent-dark); color: var(--white) !important; }
+
+  /* HERO */
+  .hero {
+    background: var(--black);
+    color: var(--white);
+    padding: 5rem 2rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    line-height: 1;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+    color: var(--white);
+  }
+
+  .hero h1 span { color: var(--accent); }
+
+  .hero p {
+    font-size: 1.05rem;
+    color: #aaa;
+    font-weight: 300;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 440px;
+  }
+
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  .btn-primary {
+    background: var(--accent);
+    color: var(--white);
+    padding: 12px 28px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: var(--accent-dark); }
+
+  .btn-secondary {
+    border: 1px solid #444;
+    color: #aaa;
+    padding: 12px 28px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+  }
+  .btn-secondary:hover { border-color: #888; color: var(--white); }
+
+  /* hero right side stats */
+  .hero-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .stat-box {
+    background: #161616;
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .stat-box:nth-child(even) { background: #1a1a1a; }
+
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.8rem;
+    color: var(--white);
+    letter-spacing: 1px;
+    line-height: 1;
+    display: block;
+  }
+
+  .stat-num span { color: var(--accent); }
+
+  .stat-label {
+    font-size: 0.75rem;
+    color: #666;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 0.4rem;
+    display: block;
+  }
+
+  /* TICKER STRIP */
+  .ticker-wrap {
+    background: var(--accent);
+    overflow: hidden;
+    padding: 10px 0;
+  }
+
+  .ticker {
+    display: flex;
+    gap: 4rem;
+    animation: ticker 25s linear infinite;
+    white-space: nowrap;
+    width: max-content;
+  }
+
+  .ticker span {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--white);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .ticker span::before { content: "◆  "; }
+
+  @keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* MAIN SECTIONS */
+  .section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: 1.5px;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-sub {
+    color: var(--muted);
+    font-weight: 300;
+    max-width: 540px;
+    margin-bottom: 2.5rem;
+    font-size: 0.95rem;
+  }
+
+  /* FEATURED DEALS */
+  #deals { background: var(--cream); }
+  #deals > .section { padding-top: 4rem; padding-bottom: 4rem; }
+
+  .deals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .deal-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+  }
+
+  .deal-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+  }
+
+  .deal-badge {
+    position: absolute; top: 12px; left: 12px;
+    background: var(--accent);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 3px;
+  }
+
+  .deal-badge.gem { background: #1a6b3c; }
+
+  .deal-img-placeholder {
+    height: 180px;
+    background: linear-gradient(135deg, #e8e4da 0%, #d4cfc5 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+  }
+
+  .deal-body { padding: 1.25rem; }
+
+  .deal-make {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 0.2rem;
+  }
+
+  .deal-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+  }
+
+  .deal-specs {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .deal-specs span::before { margin-right: 4px; }
+
+  .deal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .deal-price {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    color: var(--black);
+  }
+
+  .deal-rating {
+    font-size: 0.75rem;
+    background: #edf7f1;
+    color: #1a6b3c;
+    padding: 4px 10px;
+    border-radius: 3px;
+    font-weight: 500;
+  }
+
+  .deal-rating.warn {
+    background: #fef6e4;
+    color: #7d5a0b;
+  }
+
+  /* ARTICLES */
+  .articles-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .article-featured {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .article-featured-img {
+    height: 220px;
+    background: var(--black);
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+    position: relative;
+  }
+
+  .article-featured-img::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+  }
+
+  .article-featured-tag {
+    position: relative; z-index: 1;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+
+  .article-featured-body { padding: 1.5rem; }
+
+  .article-featured-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.6rem;
+    line-height: 1.2;
+  }
+
+  .article-featured-excerpt {
+    font-size: 0.9rem;
+    color: var(--muted);
+    font-weight: 300;
+    margin-bottom: 1rem;
+  }
+
+  .read-more {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+  }
+
+  .read-more:hover { text-decoration: underline; }
+
+  .articles-sidebar { display: flex; flex-direction: column; gap: 1rem; }
+
+  .article-mini {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s;
+  }
+
+  .article-mini:hover { border-color: var(--accent); }
+
+  .article-mini-tag {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+
+  .article-mini-title {
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 0.3rem;
+  }
+
+  .article-mini-date {
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+
+  /* NEWSLETTER */
+  .newsletter-section {
+    background: var(--black);
+    color: var(--white);
+  }
+
+  .newsletter-section .section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .newsletter-section .section-title { color: var(--white); }
+  .newsletter-section .section-sub { color: #888; }
+
+  .newsletter-form { display: flex; gap: 0; max-width: 460px; }
+
+  .newsletter-form input {
+    flex: 1;
+    padding: 13px 18px;
+    border: 1px solid #333;
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    background: #1a1a1a;
+    color: var(--white);
+    font-size: 0.9rem;
+    font-family: 'DM Sans', sans-serif;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .newsletter-form input::placeholder { color: #555; }
+  .newsletter-form input:focus { border-color: var(--accent); }
+
+  .newsletter-form button {
+    padding: 13px 24px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+  }
+
+  .newsletter-form button:hover { background: var(--accent-dark); }
+
+  .newsletter-perks {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+
+  .perk {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: #888;
+  }
+
+  .perk-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+
+  /* WHY US */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .why-card {
+    border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.25rem 1.25rem 1.5rem;
+    background: var(--cream);
+    border-radius: 0 8px 8px 0;
+  }
+
+  .why-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    color: var(--border);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .why-title {
+    font-weight: 500;
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .why-body {
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  /* DIVIDER */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--black);
+    color: #555;
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+  }
+
+  footer a { color: var(--accent); text-decoration: none; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; padding: 3rem 1.5rem; }
+    .hero-stats { grid-template-columns: 1fr 1fr; }
+    .articles-grid { grid-template-columns: 1fr; }
+    .newsletter-section .section { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .section { padding: 3rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">GEM<span>FIND</span> SA</a>
+  <ul class="nav-links">
+    <li><a href="#deals">Deals</a></li>
+    <li><a href="#articles">Articles</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#newsletter" class="nav-cta">Get Alerts</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div style="background: var(--black);">
+  <div class="hero">
+    <div>
+      <p class="hero-eyebrow">South Africa's Used Car Bible</p>
+      <h1>Don't Pay<br>Retail. <span>Find The Gem.</span></h1>
+      <p>We track thousands of used car listings across SA every week and surface the hidden deals, underpriced gems, and overpriced traps — so you can buy smart.</p>
+      <div class="hero-btns">
+        <a href="#deals" class="btn-primary">See This Week's Deals</a>
+        <a href="#newsletter" class="btn-secondary">Get Weekly Alerts</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-box">
+        <span class="stat-num">2<span>K+</span></span>
+        <span class="stat-label">Listings Tracked</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-num">R<span>42K</span></span>
+        <span class="stat-label">Avg. Savings Found</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-num">48<span>H</span></span>
+        <span class="stat-label">Deal Freshness</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-num">100<span>%</span></span>
+        <span class="stat-label">SA Focused</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker">
+    <span>Toyota Hilux — R189,000 — Joburg</span>
+    <span>VW Polo Vivo 1.4 — R98,000 — Cape Town</span>
+    <span>Honda Civic 2018 — R145,000 — Pretoria</span>
+    <span>Mazda 3 2.0 — R162,000 — Durban</span>
+    <span>Ford Ranger — R245,000 — Centurion</span>
+    <span>Suzuki Swift Sport — R138,000 — Sandton</span>
+    <span>Toyota Yaris — R112,000 — Bloemfontein</span>
+    <!-- duplicate for seamless loop -->
+    <span>Toyota Hilux — R189,000 — Joburg</span>
+    <span>VW Polo Vivo 1.4 — R98,000 — Cape Town</span>
+    <span>Honda Civic 2018 — R145,000 — Pretoria</span>
+    <span>Mazda 3 2.0 — R162,000 — Durban</span>
+    <span>Ford Ranger — R245,000 — Centurion</span>
+    <span>Suzuki Swift Sport — R138,000 — Sandton</span>
+    <span>Toyota Yaris — R112,000 — Bloemfontein</span>
+  </div>
+</div>
+
+<!-- FEATURED DEALS -->
+<div id="deals" style="background: var(--cream);">
+  <div class="section">
+    <p class="section-label">Updated Weekly</p>
+    <h2 class="section-title">This Week's Gem Finds</h2>
+    <p class="section-sub">Underpriced listings we found worth a second look. Always verify before you buy — we're here to point, not guarantee.</p>
+
+    <div class="deals-grid">
+
+      <div class="deal-card">
+        <div class="deal-badge gem">🏆 Gem Find</div>
+        <div class="deal-img-placeholder">🚗</div>
+        <div class="deal-body">
+          <p class="deal-make">Honda</p>
+          <h3 class="deal-name">Civic 1.8 Comfort 2018</h3>
+          <div class="deal-specs">
+            <span>📍 Pretoria</span>
+            <span>78,000 km</span>
+            <span>Automatic</span>
+          </div>
+          <p style="font-size: 0.82rem; color: var(--muted); font-weight: 300; margin-bottom: 0.5rem;">Market value sits around R175k. This one's listed at R145k with full service history and one owner. A strong buy if the inspection checks out.</p>
+          <div class="deal-footer">
+            <span class="deal-price">R145,000</span>
+            <span class="deal-rating">⬇ R30K Below Market</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="deal-card">
+        <div class="deal-badge">Good Deal</div>
+        <div class="deal-img-placeholder">🚙</div>
+        <div class="deal-body">
+          <p class="deal-make">Mazda</p>
+          <h3 class="deal-name">Mazda 3 2.0 Individual 2019</h3>
+          <div class="deal-specs">
+            <span>📍 Cape Town</span>
+            <span>65,000 km</span>
+            <span>Automatic</span>
+          </div>
+          <p style="font-size: 0.82rem; color: var(--muted); font-weight: 300; margin-bottom: 0.5rem;">Mazda 3s are notoriously reliable and under-appreciated in SA. This Individual trim at R162k is fair — priced at market but hard to find this clean.</p>
+          <div class="deal-footer">
+            <span class="deal-price">R162,000</span>
+            <span class="deal-rating warn">⚡ Fairly Priced</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="deal-card">
+        <div class="deal-badge gem">🏆 Gem Find</div>
+        <div class="deal-img-placeholder">🏎️</div>
+        <div class="deal-body">
+          <p class="deal-make">Suzuki</p>
+          <h3 class="deal-name">Swift Sport 1.4T 2020</h3>
+          <div class="deal-specs">
+            <span>📍 Sandton</span>
+            <span>42,000 km</span>
+            <span>Manual</span>
+          </div>
+          <p style="font-size: 0.82rem; color: var(--muted); font-weight: 300; margin-bottom: 0.5rem;">One of the most fun-per-rand cars you can buy in SA right now. Low mileage, manual, turbocharged. This should be at R170k+ and it's not. Check it today.</p>
+          <div class="deal-footer">
+            <span class="deal-price">R138,000</span>
+            <span class="deal-rating">⬇ R35K Below Market</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ARTICLES -->
+<div id="articles">
+  <div class="section">
+    <p class="section-label">Latest Posts</p>
+    <h2 class="section-title">Guides & Breakdowns</h2>
+    <p class="section-sub">Real talk about used cars in SA. No fluff, no dealer bias.</p>
+
+    <div class="articles-grid">
+      <div class="article-featured">
+        <div class="article-featured-img" style="background: #1a1a1a;">
+          <span class="article-featured-tag">Buyer's Guide</span>
+        </div>
+        <div class="article-featured-body">
+          <h3 class="article-featured-title">The 7 Best Used Cars Under R150,000 in SA Right Now</h3>
+          <p class="article-featured-excerpt">We combed through thousands of AutoTrader listings to find the best-value, most reliable used cars you can actually buy for under R150k in 2025. Here's what we found.</p>
+          <a href="#" class="read-more">Read article →</a>
+        </div>
+      </div>
+
+      <div class="articles-sidebar">
+        <a href="#" class="article-mini">
+          <p class="article-mini-tag">Price Watch</p>
+          <p class="article-mini-title">Why Toyota Hilux Prices Are Still Rising in 2025</p>
+          <p class="article-mini-date">This week</p>
+        </a>
+        <a href="#" class="article-mini">
+          <p class="article-mini-tag">Hidden Gem</p>
+          <p class="article-mini-title">The Mazda 3: SA's Most Underrated Used Car?</p>
+          <p class="article-mini-date">Last week</p>
+        </a>
+        <a href="#" class="article-mini">
+          <p class="article-mini-tag">Avoid This</p>
+          <p class="article-mini-title">5 Used Cars That Look Like Deals But Aren't</p>
+          <p class="article-mini-date">2 weeks ago</p>
+        </a>
+        <a href="#" class="article-mini">
+          <p class="article-mini-tag">How To</p>
+          <p class="article-mini-title">How to Spot a Clocked Odometer Before You Buy</p>
+          <p class="article-mini-date">3 weeks ago</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- WHY US -->
+<div id="about">
+  <div class="section">
+    <p class="section-label">Why GemFind SA</p>
+    <h2 class="section-title">We Do The Legwork. You Make The Call.</h2>
+    <p class="section-sub">No dealer kickbacks. No sponsored listings. Just honest analysis of the SA used car market.</p>
+
+    <div class="why-grid">
+      <div class="why-card">
+        <p class="why-num">01</p>
+        <p class="why-title">We track prices weekly</p>
+        <p class="why-body">We monitor thousands of AutoTrader and Cars.co.za listings and flag when something drops significantly below market value.</p>
+      </div>
+      <div class="why-card">
+        <p class="why-num">02</p>
+        <p class="why-title">No dealer sponsorships</p>
+        <p class="why-body">We're not paid to push any car or dealer. Our only income is from ads and our newsletter. Our opinion stays honest.</p>
+      </div>
+      <div class="why-card">
+        <p class="why-num">03</p>
+        <p class="why-title">Built for SA buyers</p>
+        <p class="why-body">Most car sites cater to new car buyers. We focus entirely on the used car market in South Africa and what actually matters here.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NEWSLETTER -->
+<div id="newsletter" class="newsletter-section">
+  <div class="section">
+    <div>
+      <p class="section-label">Free Weekly Newsletter</p>
+      <h2 class="section-title" style="color: var(--white);">Get The Gems<br>Before They're Gone.</h2>
+      <p class="section-sub">Good used car deals in SA move fast. Get our weekly roundup of the best finds, price drops, and buyer guides straight to your inbox.</p>
+    </div>
+    <div>
+      <form class="newsletter-form" onsubmit="handleSignup(event)">
+        <input type="email" id="email-input" placeholder="your@email.com" required />
+        <button type="submit">Subscribe Free</button>
+      </form>
+      <p style="font-size: 0.75rem; color: #444; margin-top: 0.75rem;">No spam. Unsubscribe any time. Free forever.</p>
+      <div class="newsletter-perks">
+        <div class="perk"><div class="perk-dot"></div><span>Weekly gem finds & deals</span></div>
+        <div class="perk"><div class="perk-dot"></div><span>Price drop alerts on hot models</span></div>
+        <div class="perk"><div class="perk-dot"></div><span>Buyer guides written by car people</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 GemFind SA · Built for South African car buyers · <a href="#">Contact</a> · <a href="#">Privacy</a></p>
+  <p style="margin-top: 0.5rem; font-size: 0.7rem;">We track listings from AutoTrader SA, Cars.co.za and other sources. All prices subject to change. Always do your own inspection before buying.</p>
+</footer>
+
+<script>
+function handleSignup(e) {
+  e.preventDefault();
+  const email = document.getElementById('email-input').value;
+  const btn = e.target.querySelector('button');
+  btn.textContent = '✓ You\'re in!';
+  btn.style.background = '#1a6b3c';
+  document.getElementById('email-input').value = '';
+  setTimeout(() => {
+    btn.textContent = 'Subscribe Free';
+    btn.style.background = '';
+  }, 4000);
+}
+</script>
+
+</body>
+</html>

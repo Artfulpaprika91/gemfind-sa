@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7 Best Used Cars Under R150,000 in SA Right Now — GemFind SA</title>
+<meta name="description" content="We tracked thousands of SA listings to find the best used cars under R150k. Reliable, fairly priced, and actually available. Updated May 2025.">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --black: #0e0e0e; --white: #f5f2eb; --cream: #ede9df;
+    --accent: #c8392b; --accent-dark: #9b2a1f;
+    --muted: #6b6457; --border: #d4cfc5; --card-bg: #ffffff;
+  }
+  body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--black); font-size: 17px; line-height: 1.75; }
+  nav { background: var(--black); display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 60px; border-bottom: 3px solid var(--accent); position: sticky; top: 0; z-index: 100; }
+  .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: var(--white); letter-spacing: 2px; text-decoration: none; }
+  .nav-logo span { color: var(--accent); }
+  .nav-back { font-size: 0.82rem; color: #888; text-decoration: none; transition: color 0.2s; }
+  .nav-back:hover { color: var(--white); }
+  .article-hero { background: var(--black); color: var(--white); padding: 4rem 2rem 3rem; }
+  .article-hero-inner { max-width: 780px; margin: 0 auto; }
+  .article-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+  .tag { font-size: 0.7rem; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; background: var(--accent); color: white; padding: 4px 12px; border-radius: 3px; }
+  .article-date, .article-read-time { font-size: 0.82rem; color: #666; }
+  .article-hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.2rem, 5vw, 3.5rem); line-height: 1.05; letter-spacing: 1.5px; margin-bottom: 1.25rem; color: var(--white); }
+  .article-hero h1 span { color: var(--accent); }
+  .article-intro { font-size: 1.05rem; color: #aaa; font-weight: 300; line-height: 1.7; max-width: 640px; border-left: 3px solid var(--accent); padding-left: 1.25rem; margin-top: 1.5rem; }
+  .article-body { max-width: 780px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+  .summary-box { background: var(--cream); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 1.5rem; margin-bottom: 3rem; }
+  .summary-box h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 1px; margin-bottom: 1rem; color: var(--accent); }
+  .summary-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .summary-list li { font-size: 0.9rem; display: flex; align-items: baseline; gap: 0.75rem; }
+  .summary-list li::before { content: "→"; color: var(--accent); font-weight: 500; flex-shrink: 0; }
+  .summary-list .pos { color: var(--muted); font-size: 0.75rem; font-weight: 500; }
+  .article-body p { margin-bottom: 1.4rem; color: #2a2a2a; font-weight: 300; }
+  .article-body h2 { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 1px; margin: 3rem 0 0.5rem; line-height: 1.1; }
+  .car-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 1.75rem; margin: 2rem 0; position: relative; overflow: hidden; }
+  .car-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--accent); }
+  .car-card.gem::before { background: #1a6b3c; }
+  .car-num { position: absolute; top: 1.25rem; right: 1.5rem; font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; color: #f0ece4; line-height: 1; letter-spacing: 1px; }
+  .car-badge { display: inline-block; font-size: 0.68rem; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; background: var(--accent); color: white; padding: 3px 10px; border-radius: 3px; margin-bottom: 0.75rem; }
+  .car-badge.gem { background: #1a6b3c; }
+  .car-badge.solid { background: #1a4a8a; }
+  .car-title { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 1.5px; line-height: 1; margin-bottom: 0.25rem; }
+  .car-subtitle { font-size: 0.82rem; color: var(--muted); margin-bottom: 1.25rem; }
+  .car-specs-row { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1.25rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border); }
+  .spec { display: flex; flex-direction: column; gap: 2px; }
+  .spec-label { font-size: 0.65rem; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); }
+  .spec-val { font-size: 0.95rem; font-weight: 500; color: var(--black); }
+  .car-desc { font-size: 0.92rem; color: #3a3a3a; font-weight: 300; line-height: 1.7; margin-bottom: 1rem; }
+  .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
+  .pros, .cons { background: var(--cream); border-radius: 6px; padding: 1rem 1.1rem; }
+  .pros-title, .cons-title { font-size: 0.7rem; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.6rem; }
+  .pros-title { color: #1a6b3c; }
+  .cons-title { color: var(--accent); }
+  .pros ul, .cons ul { list-style: none; display: flex; flex-direction: column; gap: 0.35rem; }
+  .pros li, .cons li { font-size: 0.82rem; color: var(--muted); display: flex; align-items: baseline; gap: 0.5rem; }
+  .pros li::before { content: "✓"; color: #1a6b3c; font-weight: 600; flex-shrink: 0; }
+  .cons li::before { content: "✗"; color: var(--accent); font-weight: 600; flex-shrink: 0; }
+  .car-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--border); flex-wrap: wrap; gap: 0.75rem; }
+  .car-price { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 1px; }
+  .price-note { font-size: 0.75rem; color: var(--muted); display: block; font-weight: 300; }
+  .verdict-badge { font-size: 0.78rem; font-weight: 500; padding: 6px 14px; border-radius: 4px; background: #edf7f1; color: #1a6b3c; }
+  .verdict-badge.ok { background: #fef6e4; color: #7d5a0b; }
+  .callout { background: var(--black); color: var(--white); border-radius: 8px; padding: 1.75rem; margin: 2.5rem 0; display: grid; grid-template-columns: 1fr auto; gap: 1.5rem; align-items: center; }
+  .callout h4 { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 1px; margin-bottom: 0.4rem; }
+  .callout p { font-size: 0.85rem; color: #888; margin: 0; font-weight: 300; }
+  .callout-btn { background: var(--accent); color: white; padding: 10px 22px; border-radius: 4px; text-decoration: none; font-weight: 500; font-size: 0.9rem; white-space: nowrap; }
+  .callout-btn:hover { background: var(--accent-dark); }
+  .tips-box { border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin: 2.5rem 0; }
+  .tips-box h4 { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; letter-spacing: 1px; margin-bottom: 1rem; }
+  .tip-list { display: flex; flex-direction: column; gap: 0.75rem; list-style: none; }
+  .tip-list li { font-size: 0.9rem; font-weight: 300; color: #3a3a3a; display: flex; align-items: baseline; gap: 0.75rem; line-height: 1.5; }
+  .tip-num { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; color: var(--accent); flex-shrink: 0; min-width: 20px; }
+  hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+  footer { background: var(--black); color: #555; padding: 2rem; text-align: center; font-size: 0.8rem; }
+  footer a { color: var(--accent); text-decoration: none; }
+  @media (max-width: 640px) {
+    .pros-cons { grid-template-columns: 1fr; }
+    .callout { grid-template-columns: 1fr; }
+    .article-body { padding: 2rem 1.25rem 4rem; }
+    .article-hero { padding: 2.5rem 1.25rem 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">GEM<span>FIND</span> SA</a>
+  <a href="index.html" class="nav-back">← Back to Home</a>
+</nav>
+
+<div class="article-hero">
+  <div class="article-hero-inner">
+    <div class="article-meta">
+      <span class="tag">Buyer's Guide</span>
+      <span class="article-date">May 2025</span>
+      <span class="article-read-time">· 8 min read</span>
+    </div>
+    <h1>7 Best Used Cars<br>Under <span>R150,000</span><br>in SA Right Now</h1>
+    <p class="article-intro">We tracked thousands of listings across AutoTrader and Cars.co.za to find the most reliable, best-value used cars you can actually buy for under R150k in South Africa today. Here's what the data showed.</p>
+  </div>
+</div>
+
+<div class="article-body">
+
+  <div class="summary-box">
+    <h3>Quick Summary — The 7 Cars</h3>
+    <ul class="summary-list">
+      <li><span class="pos">#1</span> Toyota Yaris 1.5 Xi — Best all-rounder</li>
+      <li><span class="pos">#2</span> Suzuki Swift 1.2 GL — Most fuel-efficient</li>
+      <li><span class="pos">#3</span> VW Polo Vivo 1.4 Trendline — Most popular for a reason</li>
+      <li><span class="pos">#4</span> Honda Jazz 1.5 — Best hidden gem</li>
+      <li><span class="pos">#5</span> Hyundai i20 1.2 Motion — Best value for money</li>
+      <li><span class="pos">#6</span> Nissan Almera 1.5 Acenta — Best boot space</li>
+      <li><span class="pos">#7</span> Ford Fiesta 1.0 EcoBoost — Most fun to drive</li>
+    </ul>
+  </div>
+
+  <p>Finding a reliable used car in South Africa under R150,000 is harder than it looks. The market is full of high-mileage taxis, clocked odometers, and flood-damaged cars with a fresh coat of paint. We looked at depreciation curves, reliability records, parts availability in SA, and real listing prices — not what dealers claim, but what cars are actually selling for.</p>
+  <p>These are the 7 that made the cut. Not necessarily the flashiest — but the ones that will still be running at 300,000km without eating your savings in repairs.</p>
+
+  <div class="car-card gem">
+    <span class="car-num">01</span>
+    <span class="car-badge gem">🏆 Top Pick</span>
+    <h2 class="car-title">Toyota Yaris 1.5 Xi</h2>
+    <p class="car-subtitle">2015–2019 models · Hatchback · Manual or Auto</p>
+    <div class="car-specs-row">
+      <div class="spec"><span class="spec-label">Price Range</span><span class="spec-val">R95k – R145k</span></div>
+      <div class="spec"><span class="spec-label">Avg. Mileage</span><span class="spec-val">80,000 – 130,000 km</span></div>
+      <div class="spec"><span class="spec-label">Fuel Use</span><span class="spec-val">±6.5L/100km</span></div>
+      <div class="spec"><span class="spec-label">Parts Cost</span><span class="spec-val">Very affordable</span></div>
+    </div>
+    <p class="car-desc">The Yaris is arguably the most sensible used car purchase you can make in SA under R150k. Toyota's reputation for reliability isn't just marketing — it's backed by owners running these well past 200,000km with nothing more than scheduled services. Parts are available everywhere from Midas to the local backyard mechanic. Service intervals are affordable. Insurance is cheap. This is the car you buy when you need something to just work, every time, without drama.</p>
+    <div class="pros-cons">
+      <div class="pros">
+        <p class="pros-title">Why to buy</p>
+        <ul>
+          <li>Bulletproof reliability record</li>
+          <li>Cheap parts everywhere in SA</li>
+          <li>Good resale value</li>
+          <li>Low service costs</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <p class="cons-title">Watch out for</p>
+        <ul>
+          <li>High demand — less room to negotiate</li>
+          <li>Lots of ex-rental units on market</li>
+          <li>Interior feels basic at this trim</li>
+        </ul>
+      </div>
+    </div>
+    <div class="car-footer">
+      <div><span class="car-price">R95k – R145k</span><span class="price-note">Depending on year and mileage</span></div>
+      <span class="verdict-badge">✓ Strong Buy</span>
+    </div>
+  </div>
+
+  <div class="car-card">
+    <span class="car-num">02</span>
+    <span class="car-badge">Most Efficient</span>
+    <h2 class="car-title">Suzuki Swift 1.2 GL</h2>
+    <p class="car-subtitle">2014–2020 models · Hatchback · Manual</p>
+    <div class="car-specs-row">
+      <div class="spec"><span class="spec-label">Price Range</span><span class="spec-val">R85k – R130k</span></div>
+      <div class="spec"><span class="spec-label">Avg. Mileage</span><span class="spec-val">60,000 – 110,000 km</span></div>
+      <div class="spec"><span class="spec-label">Fuel Use</span><span class="spec-val">±5.2L/100km</span></div>
+      <div class="spec"><span class="spec-label">Parts Cost</span><span class="spec-val">Affordable</span></div>
+    </div>
+    <p class="car-desc">At around 5.2L/100km, the Swift 1.2 is one of the most fuel-efficient petrol cars you can buy used in SA. In a country where petrol costs keep climbing, that matters a lot. It's light, easy to park in Joburg traffic, and genuinely fun to drive for its size. It's underrated vs the Polo Vivo, which means you can often find better deals on equivalent spec.</p>
+    <div class="pros-cons">
+      <div class="pros">
+        <p class="pros-title">Why to buy</p>
+        <ul>
+          <li>Best-in-class fuel economy</li>
+          <li>Nippy and fun to drive</li>
+          <li>Often underpriced vs Polo Vivo</li>
+          <li>Light servicing requirements</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <p class="cons-title">Watch out for</p>
+        <ul>
+          <li>Small boot (268L)</li>
+          <li>Fewer dealers in smaller towns</li>
+          <li>Not ideal for long highway trips</li>
+        </ul>
+      </div>
+    </div>
+    <div class="car-footer">
+      <div><span class="car-price">R85k – R130k</span><span class="price-note">Better deals than Polo Vivo at same mileage</span></div>
+      <span class="verdict-badge">✓ Strong Buy</span>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div>
+      <h4>Get Weekly Gem Finds In Your Inbox</h4>
+      <p>We send the best underpriced listings in SA every Monday. Free, no spam, unsubscribe any time.</p>
+    </div>
+    <a href="index.html#newsletter" class="callout-btn">Subscribe Free →</a>
+  </div>
+
+  <div class="car-card">
+    <span class="car-num">03</span>
+    <span class="car-badge solid">SA Favourite</span>
+    <h2 class="car-title">VW Polo Vivo 1.4 Trendline</h2>
+    <p class="car-subtitle">2014–2020 models · Hatchback · Manual</p>
+    <div class="car-specs-row">
+      <div class="spec"><span class="spec-label">Price Range</span><span class="spec-val">R100k – R148k</span></div>
+      <div class="spec"><span class="spec-label">Avg. Mileage</span><span class="spec-val">70,000 – 140,000 km</span></div>
+      <div class="spec"><span class="spec-label">Fuel Use</span><span class="spec-val">±7.0L/100km</span></div>
+      <div class="spec"><span class="spec-label">Parts Cost</span><span class="spec-val">Moderate</span></div>
+    </div>
+    <p class="car-desc">The Polo Vivo is the most popular used car in South Africa for a reason — it's well built, comfortable, and parts and mechanics are everywhere. The 1.4 engine is honest and reliable. Be careful though: its popularity means it's also one of the most faked deals on AutoTrader. Always check the VIN, service history, and get a pre-purchase inspection before buying.</p>
+    <div class="pros-cons">
+      <div class="pros">
+        <p class="pros-title">Why to buy</p>
+        <ul>
+          <li>Parts and mechanics everywhere</li>
+          <li>Strong resale value</li>
+          <li>Comfortable interior</li>
+          <li>Huge selection available</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <p class="cons-title">Watch out for</p>
+        <ul>
+          <li>Premium price vs rivals</li>
+          <li>Many clocked/flood-damaged on market</li>
+          <li>Fuel economy isn't great</li>
+        </ul>
+      </div>
+    </div>
+    <div class="car-footer">
+      <div><span class="car-price">R100k – R148k</span><span class="price-note">Get an inspection — non-negotiable</span></div>
+      <span class="verdict-badge ok">⚡ Buy Carefully</span>
+    </div>
+  </div>
+
+  <div class="car-card gem">
+    <span class="car-num">04</span>
+    <span class="car-badge gem">🏆 Hidden Gem</span>
+    <h2 class="car-title">Honda Jazz 1.5 Comfort</h2>
+    <p class="car-subtitle">2014–2018 models · Hatchback · Automatic</p>
+    <div class="car-specs-row">
+      <div class="spec"><span class="spec-label">Price Range</span><span class="spec-val">R110k – R148k</span></div>
+      <div class="spec"><span class="spec-label">Avg. Mileage</span><span class="spec-val">80,000 – 120,000 km</span></div>
+      <div class="spec"><span class="spec-label">Fuel Use</span><span class="spec-val">±6.8L/100km</span></div>
+      <div class="spec"><span class="spec-label">Parts Cost</span><span class="spec-val">Moderate</span></div>
+    </div>
+    <p class="car-desc">One of the most underappreciated used cars in SA. Most buyers overlook it because it doesn't carry the Polo badge, but it's built to Honda's legendary reliability standards and the interior space is remarkable for its size — the Magic Seats fold in ways that let you carry things you'd expect to need a bakkie for. Because it flies under the radar, you can often find well-maintained units below market value.</p>
+    <div class="pros-cons">
+      <div class="pros">
+        <p class="pros-title">Why to buy</p>
+        <ul>
+          <li>Honda reliability, often underpriced</li>
+          <li>Incredible interior space</li>
+          <li>Magic Seat system is genuinely useful</li>
+          <li>Smooth automatic option</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <p class="cons-title">Watch out for</p>
+        <ul>
+          <li>Fewer Honda dealers in small towns</li>
+          <li>CVT gearbox needs proper care</li>
+          <li>Not the most exciting to look at</li>
+        </ul>
+      </div>
+    </div>
+    <div class="car-footer">
+      <div><span class="car-price">R110k – R148k</span><span class="price-note">Often below market — worth hunting for</span></div>
+      <span class="verdict-badge">✓ Strong Buy</span>
+    </div>
+  </div>
+
+  <div class="car-card">
+    <span class="car-num">05</span>
+    <span class="car-badge">Best Value</span>
+    <h2 class="car-title">Hyundai i20 1.2 Motion</h2>
+    <p class="car-subtitle">2015–2020 models · Hatchback · Manual</p>
+    <div class="car-specs-row">
+      <div class="spec"><span class="spec-label">Price Range</span><span class="spec-val">R80k – R130k</span></div>
+      <div class="spec"><span class="spec-label">Avg. Mileage</span><span class="spec-val">70,000 – 130,000 km</span></div>
+      <div class="spec"><span class="spec-label">Fuel Use</span><span class="spec-val">±6.0L/100km</span></div>
+      <div class="spec"><span class="spec-label">Parts Cost</span><span class="spec-val">Very affordable</span></div>
+    </div>
+    <p class="car-desc">The i20 punches above its weight on spec and comfort for the price. At this range it's often the most feature-packed option you'll find — touchscreen, climate control, reverse sensors — on cars that Polo Vivos at the same price don't match. Hyundai's build quality improved significantly from 2015 onwards and the i20 is a properly well-finished car that most people underestimate.</p>
+    <div class="pros-cons">
+      <div class="pros">
+        <p class="pros-title">Why to buy</p>
+        <ul>
+          <li>Best spec-per-rand in this list</li>
+          <li>Good fuel economy</li>
+          <li>Cheap parts and service</li>
+          <li>Comfortable on long trips</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <p class="cons-title">Watch out for</p>
+        <ul>
+          <li>Lower resale value than Toyota/VW</li>
+          <li>Less desirable = harder to sell later</li>
+        </ul>
+      </div>
+    </div>
+    <div class="car-footer">
+      <div><span class="car-price">R80k – R130k</span><span class="price-note">Great spec for the money</span></div>
+      <span class="verdict-badge">✓ Good Buy</span>
+    </div>
+  </div>
+
+  <div class="car-card">
+    <span class="car-num">06</span>
+    <span class="car-badge solid">Best Boot</span>
+    <h2 class="car-title">Nissan Almera 1.5 Acenta</h2>
+    <p class="car-subtitle">2013–2019 models · Sedan · Manual</p>
+    <div class="car-specs-row">
+      <div class="spec"><span class="spec-label">Price Range</span><span class="spec-val">R75k – R125k</span></div>
+      <div class="spec"><span class="spec-label">Avg. Mileage</span><span class="spec-val">80,000 – 150,000 km</span></div>
+      <div class="spec"><span class="spec-label">Fuel Use</span><span class="spec-val">±7.2L/100km</span></div>
+      <div class="spec"><span class="spec-label">Parts Cost</span><span class="spec-val">Very affordable</span></div>
+    </div>
+    <p class="car-desc">If you need sedan space on a tight budget, the Almera is hard to beat. The 475L boot, spacious rear seats, and decent Nissan reliability make it a practical workhorse. Often overlooked, which means you can find genuine bargains — especially private sales from older owners who kept them in good condition. Stick to the manual gearbox; the CVT auto has a troublesome track record.</p>
+    <div class="pros-cons">
+      <div class="pros">
+        <p class="pros-title">Why to buy</p>
+        <ul>
+          <li>Largest boot on this list (475L)</li>
+          <li>Very spacious rear seats</li>
+          <li>Often well-maintained by first owners</li>
+          <li>Cheap to run and service</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <p class="cons-title">Watch out for</p>
+        <ul>
+          <li>CVT gearbox issues on auto models</li>
+          <li>Low resale value long-term</li>
+          <li>Not the most reliable Nissan made</li>
+        </ul>
+      </div>
+    </div>
+    <div class="car-footer">
+      <div><span class="car-price">R75k – R125k</span><span class="price-note">Avoid the CVT — manual only</span></div>
+      <span class="verdict-badge ok">⚡ Buy With Caution</span>
+    </div>
+  </div>
+
+  <div class="car-card">
+    <span class="car-num">07</span>
+    <span class="car-badge">Most Fun</span>
+    <h2 class="car-title">Ford Fiesta 1.0 EcoBoost</h2>
+    <p class="car-subtitle">2014–2018 models · Hatchback · Manual</p>
+    <div class="car-specs-row">
+      <div class="spec"><span class="spec-label">Price Range</span><span class="spec-val">R100k – R148k</span></div>
+      <div class="spec"><span class="spec-label">Avg. Mileage</span><span class="spec-val">70,000 – 120,000 km</span></div>
+      <div class="spec"><span class="spec-label">Fuel Use</span><span class="spec-val">±6.5L/100km</span></div>
+      <div class="spec"><span class="spec-label">Parts Cost</span><span class="spec-val">Moderate</span></div>
+    </div>
+    <p class="car-desc">The Fiesta 1.0 EcoBoost is genuinely entertaining to drive — the 3-cylinder turbo punches hard for its size and the handling is sharp. If you care even a little about enjoying your commute, this is the one on this list that makes you look forward to driving. The catch: it needs proper maintenance with quality oil and preferably a full Ford dealer service history. Find one with that and you're onto a winner.</p>
+    <div class="pros-cons">
+      <div class="pros">
+        <p class="pros-title">Why to buy</p>
+        <ul>
+          <li>Most engaging to drive on this list</li>
+          <li>Surprisingly fuel efficient for a turbo</li>
+          <li>Well-built European feel</li>
+          <li>Looks great for its age</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <p class="cons-title">Watch out for</p>
+        <ul>
+          <li>Must have full service history</li>
+          <li>Parts can take time to source</li>
+          <li>Needs quality oil — don't cheap out</li>
+        </ul>
+      </div>
+    </div>
+    <div class="car-footer">
+      <div><span class="car-price">R100k – R148k</span><span class="price-note">Full service history is non-negotiable</span></div>
+      <span class="verdict-badge ok">⚡ Buy With Caution</span>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="tips-box">
+    <h4>Before You Buy Any Used Car in SA — Do These 5 Things</h4>
+    <ul class="tip-list">
+      <li><span class="tip-num">01</span>Run a VIN check on e-NaTIS to confirm the car isn't stolen or finance-encumbered. It costs around R70 and can save you from a nightmare.</li>
+      <li><span class="tip-num">02</span>Get an independent pre-purchase inspection from an AA-approved mechanic — not the seller's mechanic. Budget R800–R1,500 and it's the best money you'll spend.</li>
+      <li><span class="tip-num">03</span>Check service history stamps against the claimed mileage. If stamps don't line up or pages are missing, walk away.</li>
+      <li><span class="tip-num">04</span>Search the same car on AutoTrader and Cars.co.za before negotiating. Know the real market price — not what the seller tells you.</li>
+      <li><span class="tip-num">05</span>Test drive for at least 20 minutes including highway speeds and sharp braking. A car that drives fine at 40km/h can reveal issues at 100km/h.</li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <h2>Our Verdict</h2>
+  <p>If we had R150,000 to spend on a used car in SA today, we'd be hunting for a clean Toyota Yaris 1.5 or Honda Jazz with full service history and under 100,000km. Both tick every box: reliability, parts availability, running costs, and long-term value.</p>
+  <p>If you want something a bit more fun, the Ford Fiesta EcoBoost is worth the extra care in buying. And if budget is the main concern, the Hyundai i20 delivers spec and reliability that most people don't give it enough credit for.</p>
+  <p>Whatever you buy — get the inspection done. A R1,000 inspection can save you a R30,000 mistake. That's not optional.</p>
+
+  <div class="callout" style="margin-top: 3rem;">
+    <div>
+      <h4>We Find Deals Like These Every Week</h4>
+      <p>Subscribe free and get the best underpriced used car listings in SA straight to your inbox every Monday.</p>
+    </div>
+    <a href="index.html#newsletter" class="callout-btn">Get Free Alerts →</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2025 GemFind SA · <a href="index.html">Home</a> · <a href="#">Contact</a></p>
+  <p style="margin-top: 0.5rem; font-size: 0.7rem;">Prices are approximate based on current listings and subject to change. Always do your own research and get a professional inspection before buying any used vehicle.</p>
+</footer>
+
+</body>
+</html>
